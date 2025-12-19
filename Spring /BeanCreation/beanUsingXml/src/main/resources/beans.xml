@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- A simple bean definition -->
+    <bean id="vehicle" class="org.example.Vehicle">
+        <property name="name" value="Audi A4"/>
+    </bean>
+
+    <!-- org.example.Person depends on org.example.Vehicle -->
+    <bean id="person" class="org.example.Person">
+        <property name="name" value="Soumya"/>
+        <!-- Inject the vehicle bean into the person bean -->
+        <property name="vehicle" ref="vehicle"/>
+       </bean>
+
+</beans>
